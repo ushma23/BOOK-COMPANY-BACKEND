@@ -15,39 +15,6 @@ var mongoose = require('mongoose');
 var mongoDB = 'mongodb+srv://shaik_ushma:9NNFVx754nFEpHQ@cluster0.obrsv.mongodb.net/book-company?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>console.log("CONNECTION ESTABLISHED"));
 
-// const { MongoClient } = require('mongodb');
-// const uri = "mongodb+srv://shaik_ushma:9NNFVx754nFEpHQ@cluster0.obrsv.mongodb.net/book-company?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const bcollection = client.db("book-company").collection("books").findOne({ISBN: "1234Three"});
-//   bcollection.then((data)=>console.log(data));
-// });
-// client.close();
-
-// async function listDatabases(client)    {
-//     databasesList = await client.db().admin().listDatabases();
-//     console.log("THE DATABASES ARE:");
-//     databasesList.databases.forEach(db=>console.log(db.name));
-// }
-
-// async function main()   {
-//     const uri = "mongodb+srv://shaik_ushma:9NNFVx754nFEpHQ@cluster0.obrsv.mongodb.net/book-company?retryWrites=true&w=majority";
-//     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-//     try{
-//         await client.connect();
-//         const result = await client.db("book-company").collection("books").findOne({ISBN: "1234Three"});
-//         console.log(result);
-//         //await listDatabases(client);
-//     }
-//     catch(err) {
-//         console.log(err);
-//     }
-//     finally {
-//         await client.close();
-//     }
-// }
-// main();
-
 //https://localhost:3000/
 app.get("/", (req, res) => {
     return res.json({
